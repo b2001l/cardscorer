@@ -1,0 +1,110 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #333;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0077cc;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background-color: #e6f2ff;
+}
+
+nav a.active {
+  background-color: #0077cc;
+  color: white;
+  border: 1px solid #0077cc;
+}
+
+.section, .scoreboard, .rules {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+}
+
+.input-group {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="number"], input[type="text"] {
+  flex: 1;
+  padding: 0.4rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.feedback {
+  font-size: 0.85rem;
+  color: #d9534f;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+ul {
+  margin-left: 1rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  input[type="number"], input[type="text"] {
+    width: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}

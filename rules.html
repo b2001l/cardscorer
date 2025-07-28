@@ -1,0 +1,72 @@
+<!-- rules.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Game Rules</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Game</a>
+    <a href="rules.html" class="active">Rules</a>
+  </nav>
+
+  <main class="rules">
+    <h1>Game Rules</h1>
+
+    <section>
+      <h2>🎯 Objective</h2>
+      <p>Score the most points over 11 rounds by accurately guessing and winning tricks.</p>
+    </section>
+
+    <section>
+      <h2>🃏 Setup</h2>
+      <ul>
+        <li>2-7 players</li>
+        <li>Standard 52-card deck</li>
+        <li>Rounds: 7-6-5-4-3-2-3-4-5-6-7 cards dealt per player</li>
+        <li>Dealer rotates clockwise each round</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔢 Guessing</h2>
+      <ul>
+        <li>Player left of dealer guesses first</li>
+        <li>Dealer guesses last and cannot cause guesses to equal cards dealt</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>♥️ Trump Suit</h2>
+      <ul>
+        <li>Dealer flips top card after dealing</li>
+        <li>The suit of that card becomes trump for the round</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎮 Playing</h2>
+      <ul>
+        <li>Player left of dealer leads first</li>
+        <li>Players must follow suit if possible</li>
+        <li>If unable, any card may be played (including trump)</li>
+        <li>Highest card of led suit wins unless trump is played</li>
+        <li>Highest trump wins the trick</li>
+        <li>Trick winner leads the next round</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🏆 Scoring</h2>
+      <ul>
+        <li>Correct guess: 10 + (2 × tricks guessed)</li>
+        <li>Incorrect guess: -2 × (difference between guess & tricks won)</li>
+        <li>Scores accumulate over rounds</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
