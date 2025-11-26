@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,47 +14,103 @@
 
   <main>
     <h1>Card Game Score Tracker</h1>
-    <div id="setup">
-      <label>Number of Players (2-7):
+    
+    <button id="themeToggle" class="secondary"></button>
+
+    <section id="setup" class="section">
+      <h2>Step 1: Number of Players</h2>
+      <p class="subtitle">Choose how many people are playing.</p>
+      <div class="input-group">
+        <label for="playerCount">Players (2–7)</label>
         <input type="number" id="playerCount" min="2" max="7" value="3" />
-      </label>
-      <button onclick="setPlayerNames()">Next</button>
-    </div>
+      </div>
+      <button id="btnToNames" class="primary">Next: Enter Names</button>
+    </section>
 
-    <div id="nameSetup" class="hidden">
-      <h3>Enter Player Names</h3>
+    <section id="nameSetup" class="section hidden">
+      <h2>Step 2: Player Names</h2>
+      <p class="subtitle">Leave blank to use default names.</p>
       <div id="nameInputs"></div>
-      <button onclick="startGame()">Start Game</button>
-    </div>
+      <button id="btnStartGame" class="primary">Start Game</button>
+      <button id="btnBackToCount" class="secondary">Back</button>
+    </section>
 
-    <div id="game" class="hidden">
-      <h2>Round <span id="roundNumber"></span> | Cards: <span id="cardsDealt"></span></h2>
-      <p>Dealer: <span id="dealerName"></span> | First Guesser: <span id="firstGuesser"></span></p>
+    <section id="game" class="game-layout hidden">
+      <header class="round-header">
+        <div>
+          <h2>Round <span id="roundNumber"></span> of 11</h2>
+          <p class="subtitle">
+            Cards this round: <strong><span id="cardsDealt"></span></strong>
+          </p>
+        </div>
+        <div class="round-meta">
+          <p>Dealer: <strong><span id="dealerName"></span></strong></p>
+          <p>First guess: <strong><span id="firstGuesser"></span></strong></p>
+        </div>
+      </header>
 
-      <div class="section">
+      <section id="guessSection" class="section">
         <h3>Player Guesses</h3>
+        <p class="subtitle">Enter how many tricks each player thinks they'll win.</p>
         <div id="guessInputs"></div>
         <div class="feedback" id="dealerWarning"></div>
-      </div>
+        <button id="btnSubmitGuesses" class="primary">Confirm Guesses</button>
+      </section>
 
-      <div class="section">
+      <section id="trickSection" class="section hidden">
         <h3>Player Tricks Won</h3>
+        <p class="subtitle">When the round is finished, record actual tricks.</p>
         <div id="guessDisplay"></div>
         <div id="resultInputs"></div>
-      </div>
+        <div class="feedback" id="trickWarning"></div>
+        
+        <div class="bottom-actions">
+          <button id="btnSubmitRound" class="primary">Submit Round Results</button>
+        </div>
+      </section>
 
-      <button onclick="submitResults()">Submit Results for Round</button>
-
-      <div class="scoreboard">
+      <section class="scoreboard">
         <h3>Scores</h3>
         <div class="table-container">
           <table id="scoreTable">
-            <thead><tr><th>Player</th><th>Guess</th><th>Tricks</th><th>Score</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Guess</th>
+                <th>Tricks</th>
+                <th>Score</th>
+              </tr>
+            </thead>
             <tbody id="scoreRows"></tbody>
           </table>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="section" id="roundHistorySection">
+        <h3>Round History</h3>
+        <p class="subtitle" id="historySummary">No rounds played yet.</p>
+        <div class="table-container">
+          <table id="historyTable">
+            <thead>
+              <tr id="historyHeaderRow"></tr>
+            </thead>
+            <tbody id="historyRows"></tbody>
+          </table>
+        </div>
+        <button id="btnEditHistory" class="secondary">Edit Past Rounds</button>
+        <div id="editHistoryActions" class="hidden">
+            <p class="feedback" id="editHistoryWarning" style="color:var(--warning-color);"></p>
+            <button id="btnSaveHistory" class="primary">Save & Recalculate Scores</button>
+            <button id="btnCancelEdit" class="secondary">Cancel Edit</button>
+        </div>
+      </section>
+
+      <section id="gameOver" class="section hidden">
+        <h2>Game Over</h2>
+        <p id="winnerText"></p>
+        <button id="btnNewGame" class="secondary">Start New Game</button>
+      </section>
+    </section>
   </main>
 
   <script src="script.js"></script>
